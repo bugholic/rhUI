@@ -1,13 +1,10 @@
-import Hero from "@/components/Hero";
-import Navbar from "@/components/Navbar";
+// import Hero from "@/src/app/components/Hero";
+import Navbar from "../components/Navbar";
 
 const page = () => {
   return (
     <>
-      <section id="heroSection">
-        <Navbar />
-        <Hero />
-      </section>
+      <Navbar />
     </>
   );
 };
