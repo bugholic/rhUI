@@ -4,7 +4,9 @@ import Navbar from "../components/Navbar";
 const page = () => {
   return (
     <>
+    <div id="heroSection">
       <Navbar />
+    </div>
     </>
   );
 };
