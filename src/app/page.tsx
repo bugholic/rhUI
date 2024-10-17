@@ -1,12 +1,16 @@
-// import Hero from "@/src/app/components/Hero";
-import Navbar from "../components/Navbar";
-
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import StorySection from "@/components/StorySection";
+import FourDecades from "@/components/fourDecades";
 const page = () => {
   return (
     <>
-    <div id="heroSection">
-      <Navbar />
-    </div>
+      <div id="heroSection">
+        <Navbar />
+        <Hero />
+      </div>
+      <StorySection />
+      <FourDecades />
     </>
   );
 };

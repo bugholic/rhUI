@@ -4,11 +4,11 @@ import logo from "@/assets/images/riyadhHoldingsLogo.svg";
 const Navbar = () => {
   return (
     <>
-      <nav className="flex justify-between text-white items-center lg:px-5 w-[1312px]">
+      <nav className="flex justify-between text-white items-center lg:px-5 p-5 lg:w-[1312px]">
         <div>
           <Image src={logo} className="w-[14vw]" alt="Riyadh holding" />
         </div>
-        <aside className="flex"> 
+        <aside className="hidden lg:flex"> 
           <div className="flex gap-[5vw] tracking-tighter text-sm font-normal">
             <div>Home</div>
             <div>About Us</div>
