@@ -7,7 +7,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="font-arial">
+      <body className="font-somar">
         {children}
       </body>
     </html>

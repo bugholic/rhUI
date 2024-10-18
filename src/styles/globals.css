@@ -4,15 +4,15 @@
 
 @font-face {
   font-family: "somar";
-  src: url("../assets/fonts/fonnts.com-Somar_Regular.ttf") format("ttf");
+  src: url("../assets/fonts/Somar-Regular.ttf") format("ttf");
 }
 @font-face {
   font-family: "somar-bold";
-  src: url("../assets/fonts/fonnts.com-Somar_Bold.ttf") format("ttf");
+  src: url("../assets/fonts/Somar-ExtraBold.otf") format("ttf");
 }
 @font-face {
   font-family: "somar-light";
-  src: url("../assets/fonts/fonnts.com-Somar_Light.ttf") format("ttf");
+  src: url("../assets/fonts/Somar-Light.otf") format("ttf");
 }
 
 #heroSection {
