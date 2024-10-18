@@ -43,7 +43,7 @@ const fourDecades = () => {
       <div className="flex flex-row overflow-x-scroll">
         {timelineData.map((item, index) => {
           return (
-            <section className="timelineSection w-[200px]">
+            <section className="timelineSection w-[200px]" key={index}>
               <h3 className="timelineHeading text-[#154466] text-[38px] font-semibold">
                 {item.year}
               </h3>

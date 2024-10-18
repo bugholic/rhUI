@@ -28,7 +28,7 @@ body {
 }
 
 .timelineBarSection {
-  @apply flex flex-row items-center py-10;
+  @apply flex flex-row items-center py-10 min-w-full;
 }
 
 .timelinespot {
