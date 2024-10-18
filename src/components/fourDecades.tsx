@@ -8,8 +8,17 @@ const fourDecades = () => {
         TO PROGRESS, EVOLUTION, AND EXCELLENCE  
       </h1>
       <div>
-
-        
+      <h2>
+        1985
+      </h2>
+      <div className="border-2 w-[100px]"></div>
+        <div>
+          PIONEERING BEGINNINGS
+          <br />
+          <small>
+          Foundations in the Al Malgliah and Al Deira Markets
+          </small>
+        </div>
       </div>
     </section>
   );
