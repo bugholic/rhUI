@@ -4,15 +4,19 @@
 
 @font-face {
   font-family: "somar";
-  src: url("../assets/fonts/fonnts.com-Somar_Regular.ttf") format("ttf");
+  src: url("../assets/fonts/Somar-Regular.ttf") format("truetype");
 }
 @font-face {
   font-family: "somar-bold";
-  src: url("../assets/fonts/fonnts.com-Somar_Bold.ttf") format("ttf");
+  src: url("../assets/fonts/Somar-ExtraBold.otf") format("opentype");
 }
 @font-face {
   font-family: "somar-light";
-  src: url("../assets/fonts/fonnts.com-Somar_Light.ttf") format("ttf");
+  src: url("../assets/fonts/Somar-Light.otf") format("opentype");
+}
+
+body {
+  font-family: "somar", sans-serif;
 }
 
 #heroSection {
@@ -21,4 +25,24 @@
   background-size: cover;
   background-position: right;
   @apply min-h-screen;
+}
+
+.navbarItems{
+  cursor: pointer;
+}
+
+.timelineSection {
+  @apply w-[90%] lg:w-[350px];
+}
+
+.timelineBarSection {
+  @apply flex flex-row items-center py-10 min-w-full;
+}
+
+.timelinespot {
+  @apply w-[12%] h-[30px] bg-[#C2AB80] rounded-full;
+}
+
+.timelineLine {
+  @apply w-[100vw] h-[2px] bg-[#C2AB80];
 }

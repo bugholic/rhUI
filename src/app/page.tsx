@@ -2,6 +2,8 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import StorySection from "@/components/StorySection";
 import FourDecades from "@/components/fourDecades";
+import Section4 from "@/components/Section4";
+import Section5 from "@/components/Section5";
 const page = () => {
   return (
     <>
@@ -11,6 +13,8 @@ const page = () => {
       </div>
       <StorySection />
       <FourDecades />
+      {/* <Section4 />   */}
+      <Section5 />
     </>
   );
 };

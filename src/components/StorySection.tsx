@@ -4,11 +4,15 @@ import Image from "next/image";
 const StorySection = () => {
   return (
     <>
-      <section>
-        <h1 className="p-10 text-[#C2AB80] text-[32px] font-semibold">
+      <section className="w-full pr-10">
+        <h1 className="p-10 text-[#C2AB80] text-[32px] font-semibold lg:hidden">
           Foundation: <br /> Our Story
         </h1>
-        <div className="p-10 pt-0 text-[#154466] text-[16px] font-normal">
+        <main className="lg:flex lg:flex-row-reverse w-full">
+        <div className="p-10 pt-0 text-[#154466] text-[16px] font-normal w-full lg:w-[600px]">
+        <h1 className="py-10 text-[#C2AB80] text-[32px] font-semibold hidden lg:block">
+        Our Story : Foundation
+        </h1>
           <p>
             In the heart of Riyadh, a vision was born; to revitalize and
             regenerate the urban landscape and to redefine the role of
@@ -29,9 +33,10 @@ const StorySection = () => {
             people.
           </p>
         </div>
-        <div className="py-10">
-          <Image src={storyImage} alt="story-image" />
+        <div className="py-10 lg:w-1/2 lg:mr-auto">
+          <Image src={storyImage} className="w-[600px]" alt="story-image" />
         </div>
+        </main>
       </section>
     </>
   );
