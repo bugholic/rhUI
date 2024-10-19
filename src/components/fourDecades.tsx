@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import previous from "../assets/icons/previous.svg";
 import next from "../assets/icons/next.svg";
 import Image from "next/image";
-
+import Heading from "./Heading";
 const timelineData = [
   {
     year: 1985,
@@ -39,10 +39,7 @@ const timelineData = [
 const fourDecades = () => {
   return (
     <section className="p-5 lg:px-10">
-      <h1 className="p-10 text-[#C2AB80] text-[32px] lg:text-[40px] font-semibold">
-        FOUR DECADES OF CONTINUOUS ADVANCEMENT SIGNIFY OUR UNWAVERING COMMITMENT
-        TO PROGRESS, EVOLUTION, AND EXCELLENCE
-      </h1>
+      <Heading title="FOUR DECADES OF CONTINUOUS ADVANCEMENT SIGNIFY OUR UNWAVERING COMMITMENT TO PROGRESS, EVOLUTION, AND EXCELLENCE" />
       <div className="flex flex-row overflow-x-scroll">
         {timelineData.map((item, index) => {
           return (
@@ -68,9 +65,9 @@ const fourDecades = () => {
         })}
       </div>
       <div className="timelineSectionBtn flex">
-          <div className="bg-gray-400 w-fit p-3 m-1 text-center"> <Image src={previous} alt="previous" /></div>
-          <div className="bg-[#C2AB80] w-fit p-3 m-1 text-center"> <Image src={next} alt="next" /></div>
-        </div>
+        <div className="bg-gray-400 w-fit p-3 m-1 text-center"> <Image src={previous} alt="previous" /></div>
+        <div className="bg-[#C2AB80] w-fit p-3 m-1 text-center"> <Image src={next} alt="next" /></div>
+      </div>
     </section>
   );
 };

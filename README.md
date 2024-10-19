@@ -2,6 +2,8 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+    <!-- "@next/swc-win32-x64-msvc": "^15.0.0-rc.1", -->
+    need to be installed in the project
 First, run the development server:
 
 ```bash

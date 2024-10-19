@@ -4,51 +4,51 @@ import thumbnail1 from '@/assets/images/section5/1.svg'
 import thumbnail2 from '@/assets/images/section5/2.svg'
 import thumbnail3 from '@/assets/images/section5/3.svg'
 import thumbnail4 from '@/assets/images/section5/4.svg'
-
+import Heading from './Heading'
 const cardData = [
   {
-      img: thumbnail1,
-      title: "Business Viability Analysis, Strategy, and Planning",
-      keyPoints: [
+    img: thumbnail1,
+    title: "Business Viability Analysis, Strategy, and Planning",
+    keyPoints: [
       "Business Viability Analysis, Strategy, and Planning",
       "Customer Experience Evaluation & Assessment",
       "Stakeholder Engagement Workshops for partnership alignment",
       "Initiative Design & Development aligned with organizational goals",
-      ]
-    },
-    {
-      img: thumbnail2,
-      title: "Sustainable urban transformation through eco-conscious initiatives, fiscal planning and stakeholder management.",
-      keyPoints: [
+    ]
+  },
+  {
+    img: thumbnail2,
+    title: "Sustainable urban transformation through eco-conscious initiatives, fiscal planning and stakeholder management.",
+    keyPoints: [
       "Integrated Tenant Mix Strategy ",
       "Building Plans & Comprehensive Environmental Impact Assessments",
       "Holistic Sustainability Programs and Carbon Footprint Analysis ",
       "Financial Sustainability Models and Supply Chain Management",
       "Relationship management",
-      ]
-    },
-    {
-      img: thumbnail3,
-      title: "Operational excellence ensures efficient service delivery and enhances community well-being.",
-      keyPoints: [
+    ]
+  },
+  {
+    img: thumbnail3,
+    title: "Operational excellence ensures efficient service delivery and enhances community well-being.",
+    keyPoints: [
       "Process Optimization and Efficiency Analysis",
       "Quality Control and Performance Monitoring",
       "Continuous Improvement and Resource Allocation",
       "Risk Management and Compliance Monitoring",
       "Training Programs"
-      ]
-    },
-    {
-      img: thumbnail4,
-      title: "We value public engagement, involving the community in decision-making for transparency and trust.",
-      keyPoints: [
-        "Community Outreach and Engagement Programs",
-        "Stakeholder Consultation Services",
-        "Public Opinion Surveys and Feedback Mechanisms",
-        "Community Events and Workshops",
-        "Public Relations and Communication Strategies",
-      ]
-    }
+    ]
+  },
+  {
+    img: thumbnail4,
+    title: "We value public engagement, involving the community in decision-making for transparency and trust.",
+    keyPoints: [
+      "Community Outreach and Engagement Programs",
+      "Stakeholder Consultation Services",
+      "Public Opinion Surveys and Feedback Mechanisms",
+      "Community Events and Workshops",
+      "Public Relations and Communication Strategies",
+    ]
+  }
 ]
 
 
@@ -56,27 +56,28 @@ const cardData = [
 const Section5 = () => {
   return (
     <section>
-      <h1 className="p-10 text-[#C2AB80] text-[32px] lg:text-[40px] font-semibold">
-        PIONEERING URBAN EXCELLENCE AND COMMUNITY REVITALIZATION
-      </h1>
+      <Heading title="PIONEERING URBAN EXCELLENCE AND COMMUNITY REVITALIZATION" />
+
       <main className='flex flex-col lg:flex-row items-center justify-center px-10 leading-6'>
 
         {cardData.map((card, index) => (
-        <section key={index} className='py-10'>
-        <div className="thumbnail">
-          <Image src={card.img} alt="thumbnail1" className='w-[600px]'/>
-        </div>
-        <h3 className='text-[#154466] py-5 font-semibold'>
-          {card.title}
-        </h3>
-        <ul className='font-light text-[#154466]'>
-          {card.keyPoints.map((point, index) => (
-          <li key={index} className='mx-5 my-2 list-disc'>
-            {point}
-          </li>
-          ))}
-          </ul>
-        </section>
+          <section key={index} className='p-5 mt-10 w-full rounded-xl bg-[#F5F4F4] md:bg-transparent'>
+            <div className="thumbnail">
+              <Image src={card.img} alt="thumbnail1" className='w-[600px] h-[200px] md:h-[80vh] object-cover' />
+            </div>
+            <div className='lg:hidden'>
+              <h3 className='text-[#154466] py-5 font-semibold'>
+                {card.title}
+              </h3>
+              <ul className='font-light text-[#154466]'>
+                {card.keyPoints.map((point, index) => (
+                  <li key={index} className='mx-5 my-2 list-disc'>
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
         ))}
       </main>
     </section>
