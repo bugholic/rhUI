@@ -1,8 +1,15 @@
+'use client'
+
 import React, { useState } from "react";
 import previous from "../assets/icons/previous.svg";
 import next from "../assets/icons/next.svg";
 import Image from "next/image";
 import Heading from "./Heading";
+import Slider from "react-slick";
+
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
+
 const timelineData = [
   {
     year: 1985,
@@ -37,36 +44,56 @@ const timelineData = [
 ];
 
 const fourDecades = () => {
+
+  let settings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
+
+  const handleNextClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.currentTarget.scrollLeft += 100;
+  }
+
+  const handlePreviousClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.currentTarget.scrollLeft -= 100;
+  }
+
   return (
     <section className="p-5 lg:px-10">
       <Heading title="FOUR DECADES OF CONTINUOUS ADVANCEMENT SIGNIFY OUR UNWAVERING COMMITMENT TO PROGRESS, EVOLUTION, AND EXCELLENCE" />
       <div className="flex flex-row overflow-x-scroll">
         {timelineData.map((item, index) => {
           return (
-            <section className="timelineSection" key={index}>
-              <h3 className="timelineHeading md:hidden text-[#154466] text-[38px] font-semibold">
-                {item.year}
-              </h3>
-              <section className="timelineBarSection">
-                <div className="timelinespot"></div>
-                <div className="timelineLine"></div>
+            // <Slider {...settings}>
+              <section className="timelineSection" key={index}>
+                <h3 className="timelineHeading md:hidden text-[#154466] text-[38px] font-semibold">
+                  {item.year}
+                </h3>
+                <section className="timelineBarSection">
+                  <div className="timelinespot"></div>
+                  <div className="timelineLine"></div>
+                </section>
+                <h3 className="timelineHeading text-[#154466] text-[38px] font-semibold hidden md:block">
+                  {item.year}
+                </h3>
+                <h5 className="timelineInfo text-[#154466] text-[20px] font-semibold tracking-tighter">
+                  {item.infoHeading}
+                </h5>
+                <p className="timelineInfo text-[#154466] text-[16px] font-normal py-5 tracking-tighter">
+                  {item.info}
+                </p>
               </section>
-              <h3 className="timelineHeading text-[#154466] text-[38px] font-semibold hidden md:block">
-                {item.year}
-              </h3>
-              <h5 className="timelineInfo text-[#154466] text-[20px] font-semibold tracking-tighter">
-                {item.infoHeading}
-              </h5>
-              <p className="timelineInfo text-[#154466] text-[16px] font-normal py-5 tracking-tighter">
-                {item.info}
-              </p>
-            </section>
+            // </Slider>
           );
         })}
       </div>
       <div className="timelineSectionBtn flex">
-        <div className="bg-gray-400 w-fit p-3 m-1 text-center"> <Image src={previous} alt="previous" /></div>
-        <div className="bg-[#C2AB80] w-fit p-3 m-1 text-center"> <Image src={next} alt="next" /></div>
+        <div onClick={handlePreviousClick} className="cursor-pointer bg-gray-400 w-fit p-3 m-1 text-center"> <Image src={previous} alt="previous" /></div>
+        <div onClick={handleNextClick} className="cursor-pointer bg-[#C2AB80] w-fit p-3 m-1 text-center"> <Image src={next} alt="next" /></div>
       </div>
     </section>
   );
