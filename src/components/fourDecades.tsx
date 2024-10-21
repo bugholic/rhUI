@@ -5,10 +5,6 @@ import previous from "../assets/icons/previous.svg";
 import next from "../assets/icons/next.svg";
 import Image from "next/image";
 import Heading from "./Heading";
-import Slider from "react-slick";
-
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
 
 const timelineData = [
   {
@@ -45,14 +41,6 @@ const timelineData = [
 
 const fourDecades = () => {
 
-  let settings = {
-    dots: false,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
-
 
   const handleNextClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.currentTarget.scrollLeft += 100;
@@ -68,7 +56,6 @@ const fourDecades = () => {
       <div className="flex flex-row overflow-x-scroll">
         {timelineData.map((item, index) => {
           return (
-            // <Slider {...settings}>
               <section className="timelineSection" key={index}>
                 <h3 className="timelineHeading md:hidden text-[#154466] text-[38px] font-semibold">
                   {item.year}
@@ -87,7 +74,6 @@ const fourDecades = () => {
                   {item.info}
                 </p>
               </section>
-            // </Slider>
           );
         })}
       </div>
