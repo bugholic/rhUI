@@ -20,14 +20,14 @@ const Section4 = () => {
         <>   
         <Heading title="WE DRIVE STRATEGIC IMPACT THAT RESONATES WITH OUR PARTNERS AND CONTRIBUTES TO A BETTER QUALITY OF LIFE." />
 
-            <section className='p-10'>
+            <section className='p-10 lg:grid grid-cols-3 gap-20'>
                 {section4Data.map((item, index) => (
                     <div key={index} className="indexSection flex flex-row">
                         <div className='font-bold text-[#154466] text-[32px] lg:text-[40px]'>0{index + 1}</div>
                         <div className='flex flex-col px-5'>
                             <div className={`border-2 bg-[${item.borderColor}] border-[${item.borderColor}] w-20 h-2 mt-6`}></div>
                             <p className='text-[#154466] py-2 font-semibold text-[20px] lg:text-[24px]'>
-                                {item.title}
+                                {item.title}    
                             </p>
                         </div>
                     </div>

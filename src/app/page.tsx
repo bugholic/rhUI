@@ -7,6 +7,9 @@ import Section5 from "@/components/Section5";
 import Section6 from "@/components/Section6";
 import Section7 from "@/components/Section7";
 import Footer from "@/components/Footer";
+import Image from "next/image";
+import Sec4Vector from "@/assets/images/section4vector.svg"
+
 const page = () => {
   return (
     <>
@@ -16,6 +19,9 @@ const page = () => {
       </div>
       <StorySection />
       <FourDecades />
+      {/* <div className="relative">
+      <Image src={Sec4Vector}  className="w-1/2 ml-auto mt-3" alt="vector"/>
+      </div> */}
       <Section4 />  
       <Section5 />
       <Section6 />
