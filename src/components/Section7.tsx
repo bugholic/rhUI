@@ -30,7 +30,7 @@ const Section7 = () => {
             <main className='md:grid grid-cols-3 gap-2'>
                 {newsData.map((item, index) => (
                     <section className="newsCard w-full" key={index}>
-                        <Image src={item.img} alt="image" className='w-[343px] h-[429px] m-auto object-cover' />
+                        <Image src={item.img} alt="image" className='w-[340px] h-[340px] m-auto object-contain' />
                         <div className="content p-10">
                             <p className="date text-[#C2AB80]">
                                 <span>19</span>/

@@ -8,6 +8,7 @@ import Heading from './Heading'
 const cardData = [
   {
     img: thumbnail1,
+    imgTitle:"Ecosystem Design & Management",
     title: "Business Viability Analysis, Strategy, and Planning",
     keyPoints: [
       "Business Viability Analysis, Strategy, and Planning",
@@ -18,6 +19,7 @@ const cardData = [
   },
   {
     img: thumbnail2,
+    imgTitle:"Sustainable development",
     title: "Sustainable urban transformation through eco-conscious initiatives, fiscal planning and stakeholder management.",
     keyPoints: [
       "Integrated Tenant Mix Strategy ",
@@ -29,6 +31,7 @@ const cardData = [
   },
   {
     img: thumbnail3,
+    imgTitle:"Operational excellence",
     title: "Operational excellence ensures efficient service delivery and enhances community well-being.",
     keyPoints: [
       "Process Optimization and Efficiency Analysis",
@@ -40,6 +43,7 @@ const cardData = [
   },
   {
     img: thumbnail4,
+    imgTitle:"Public engagement",
     title: "We value public engagement, involving the community in decision-making for transparency and trust.",
     keyPoints: [
       "Community Outreach and Engagement Programs",
@@ -62,7 +66,10 @@ const Section5 = () => {
 
         {cardData.map((card, index) => (
           <section key={index} className='p-5 mt-10 w-full rounded-xl bg-[#F5F4F4] md:bg-transparent'>
-            <div className="thumbnail">
+            <div className="relative thumbnail flex flex-col items-center justify-center">
+              <div className='absolute text-white text-3xl font-semibold text-center hidden md:block'>
+              {card.imgTitle.toUpperCase()}
+              </div>
               <Image src={card.img} alt="thumbnail1" className='w-[600px] h-[200px] md:h-[80vh] object-cover' />
             </div>
             <div className='lg:hidden'>

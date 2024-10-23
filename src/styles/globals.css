@@ -39,11 +39,11 @@ body {
 }
 
 .timelineBarSection {
-  @apply flex flex-row items-center py-10 min-w-full;
+  @apply flex flex-row items-center py-10 min-w-full ;
 }
 
 .timelinespot {
-  @apply w-[12%] h-[30px] bg-[#C2AB80] rounded-full;
+  @apply w-[120px] h-[30px] bg-[#C2AB80] rounded-full;
 }
 
 .timelineLine {

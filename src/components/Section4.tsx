@@ -1,4 +1,6 @@
+import Image from "next/image"
 import Heading from "./Heading"
+import vector4 from "@/assets/images/ImpactImgPattern-CJKyzewL.png"
 
 const section4Data = [
     {
@@ -6,19 +8,24 @@ const section4Data = [
         title: "Participate in the enhancement of the quality of life in Riyadh",
     },
     {
-        borderColor: "#609080",
+        borderColor: "teal",
         title: "Support Riyadh municipality's strategic agenda in coordination with other strategic entities within its ecosystem",
     },
     {
-        borderColor: "#487298",
+        borderColor: "midnightblue",
         title: "Enhance value chains for critical sectors to contribute to Riyadh's development",
     },
 ]
 
 const Section4 = () => {
     return (
-        <>   
+        <section>
+            <div className="flex">
         <Heading title="WE DRIVE STRATEGIC IMPACT THAT RESONATES WITH OUR PARTNERS AND CONTRIBUTES TO A BETTER QUALITY OF LIFE." />
+        <div>
+            <Image src={vector4} alt="vectoreImage" />
+        </div>
+                </div>   
 
             <section className='p-10 lg:grid grid-cols-3 gap-20'>
                 {section4Data.map((item, index) => (
@@ -35,7 +42,7 @@ const Section4 = () => {
             </section>
 
 
-        </>
+        </section>
     )
 }
 
