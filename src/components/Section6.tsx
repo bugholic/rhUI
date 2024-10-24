@@ -105,9 +105,9 @@ const Section6 = () => {
             <div className='md:w-3/4'>
                 <Heading title="Diverse Industries Driving Growth through Strategic Sector Expansion and Impact" />
             </div>
-            <main className="md:hidden sectionContainer">
+            <main className='flex flex-row md:hidden overflow-scroll sectionContainer'>
                 {section6Data.map((item, index) => (
-                    <section key={index}>
+                    <section key={index} className='w-full'>
                         <main className='p-10'>
                             <div className="imgContainer">
                                 <Image src={item.logo} alt="image" />
