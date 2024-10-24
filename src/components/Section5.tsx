@@ -60,7 +60,7 @@ const cardData = [
 const Section5 = () => {
   return (
     <section>
-      <div className='w-[700px]'>
+      <div className='md:w-[700px]'>
       <Heading title="PIONEERING URBAN EXCELLENCE AND COMMUNITY REVITALIZATION" />
       </div>
 
