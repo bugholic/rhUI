@@ -43,7 +43,7 @@ body {
 }
 
 .timelinespot {
-  @apply md:w-[120px] w-[30%]  h-[30px] bg-[#C2AB80] rounded-full;
+  @apply md:w-[120px] w-[40px]  h-[30px] bg-[#C2AB80] rounded-full;
 }
 
 .timelineLine {
@@ -86,4 +86,17 @@ img {
   height: 560px;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
+}
+
+.menu{
+  background-color: #154466;
+  min-width: 90vw;
+  right: 0;
+  line-height: 2;
+  font-weight: 200;
+  top: 0;
+  padding: 20px;
+  position:absolute;
+  min-height: 100vh;
+  z-index: 10;
 }
