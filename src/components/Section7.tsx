@@ -1,3 +1,6 @@
+'use client'
+
+import { useState } from "react";
 import Heading from "./Heading";
 import newsImg from '@/assets/images/section7/Image-1.svg'
 import Image from 'next/image';
@@ -24,12 +27,39 @@ const newsData = [
 
 
 const Section7 = () => {
+    
+    const [scrollPosition, setScrollPosition] = useState(0);
+
+    const handleNextClick = () => {
+        const container = document.querySelector('.sectionContainer');
+        if (container) {
+            const newPosition = Math.min(scrollPosition + 500, container.scrollWidth - container.clientWidth);
+            setScrollPosition(newPosition);
+            container.scrollTo({
+                left: newPosition,
+                behavior: 'smooth'
+            });
+        }
+    };
+
+    
+  const handlePreviousClick = () => {
+    const container = document.querySelector('.sectionContainer');
+    if (container) {
+      const newPosition = Math.max(scrollPosition - 500, container.scrollWidth + container.clientWidth);
+      setScrollPosition(newPosition);
+      container.scrollTo({
+        left: newPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
     return (
         <main>
             <Heading title="news and updates" />
-            <main className='md:grid grid-cols-3 gap-2'>
+            <main className='md:grid grid-cols-3 gap-2 flex overflow-x-scroll sectionContainer'>
                 {newsData.map((item, index) => (
-                    <section className="newsCard w-full" key={index}>
+                    <section className="newsCard min-w-full" key={index}>
                         <Image src={item.img} alt="image" className='w-[340px] h-[340px] m-auto object-contain' />
                         <div className="content p-10">
                             <p className="date text-[#C2AB80]">
@@ -47,9 +77,9 @@ const Section7 = () => {
                     </section>
                 ))}
             </main>
-            <div className="timelineSectionBtn flex p-5 w-fit ml-auto">
-                <div className="bg-[#C2AB80] w-fit p-3 m-1 text-center"> <Image src={previous} alt="previous" /></div>
-                <div className="bg-[#C2AB80] w-fit p-3 m-1 text-center"> <Image src={next} alt="next" /></div>
+            <div className="timelineSectionBtn flex p-5 px relative w-[200px] md:ml-auto">
+                <div className="bg-[#C2AB80] w-fit py-4 px-6  m-1 text-center cursor-pointer" onClick={handlePreviousClick}> <Image src={previous} alt="previous" /></div>
+                <div className="bg-[#C2AB80] w-fit py-4 px-6 m-1 text-center cursor-pointer" onClick={handleNextClick}> <Image src={next} alt="next" /></div>
             </div>
         </main>
     )
