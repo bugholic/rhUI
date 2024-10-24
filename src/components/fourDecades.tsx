@@ -1,9 +1,14 @@
+'use client'
+
 import React, { useState } from "react";
 import previous from "../assets/icons/previous.svg";
 import next from "../assets/icons/next.svg";
 import Image from "next/image";
 import Heading from "./Heading";
+<<<<<<< HEAD
 import { Carousel } from "@material-tailwind/react";
+=======
+>>>>>>> 45b271a40806bbb7177c66927e48d80059ef083b
 
 const timelineData = [
   {
@@ -39,6 +44,16 @@ const timelineData = [
 ];
 
 const fourDecades = () => {
+
+
+  const handleNextClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.currentTarget.scrollLeft += 100;
+  }
+
+  const handlePreviousClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.currentTarget.scrollLeft -= 100;
+  }
+
   return (
     <section className="p-5 lg:px-10">
       <Heading title="FOUR DECADES OF CONTINUOUS ADVANCEMENT SIGNIFY OUR UNWAVERING COMMITMENT TO PROGRESS, EVOLUTION, AND EXCELLENCE" />
@@ -67,6 +82,7 @@ const fourDecades = () => {
         })}
       </div>
       <div className="timelineSectionBtn flex">
+<<<<<<< HEAD
         <div className="bg-gray-400 w-fit p-3 m-1 text-center">
           {" "}
           <Image src={previous} alt="previous" />
@@ -75,6 +91,10 @@ const fourDecades = () => {
           {" "}
           <Image src={next} alt="next" />
         </div>
+=======
+        <div onClick={handlePreviousClick} className="cursor-pointer bg-gray-400 w-fit p-3 m-1 text-center"> <Image src={previous} alt="previous" /></div>
+        <div onClick={handleNextClick} className="cursor-pointer bg-[#C2AB80] w-fit p-3 m-1 text-center"> <Image src={next} alt="next" /></div>
+>>>>>>> 45b271a40806bbb7177c66927e48d80059ef083b
       </div>
     </section>
   );

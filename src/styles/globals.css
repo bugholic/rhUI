@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @font-face {
   font-family: "somar";
   src: url("../assets/fonts/Somar-Regular.ttf") format("truetype");
