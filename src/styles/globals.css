@@ -43,7 +43,7 @@ body {
 }
 
 .timelinespot {
-  @apply w-[120px] h-[30px] bg-[#C2AB80] rounded-full;
+  @apply md:w-[120px] w-[30%]  h-[30px] bg-[#C2AB80] rounded-full;
 }
 
 .timelineLine {

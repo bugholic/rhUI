@@ -76,7 +76,7 @@ const Section6 = () => {
     const handleNextClick = () => {
         const container = document.querySelector('.sectionContainer');
         if (container) {
-            const newPosition = Math.min(scrollPosition + 100, container.scrollWidth - container.clientWidth);
+            const newPosition = Math.min(scrollPosition + 500, container.scrollWidth - container.clientWidth);
             setScrollPosition(newPosition);
             container.scrollTo({
                 left: newPosition,
@@ -87,9 +87,9 @@ const Section6 = () => {
 
     
   const handlePreviousClick = () => {
-    const container = document.querySelector('.timelineContainer');
+    const container = document.querySelector('.sectionContainer');
     if (container) {
-      const newPosition = Math.max(scrollPosition - 100, container.scrollWidth + container.clientWidth);
+      const newPosition = Math.max(scrollPosition - 500, container.scrollWidth + container.clientWidth);
       setScrollPosition(newPosition);
       container.scrollTo({
         left: newPosition,
@@ -107,7 +107,7 @@ const Section6 = () => {
             </div>
             <main className='flex flex-row md:hidden overflow-scroll sectionContainer'>
                 {section6Data.map((item, index) => (
-                    <section key={index} className='w-full'>
+                    <section key={index} className='min-w-full'>
                         <main className='p-10'>
                             <div className="imgContainer">
                                 <Image src={item.logo} alt="image" />
