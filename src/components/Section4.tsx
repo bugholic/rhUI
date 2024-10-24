@@ -23,7 +23,7 @@ const Section4 = () => {
             <div className="flex">
         <Heading title="WE DRIVE STRATEGIC IMPACT THAT RESONATES WITH OUR PARTNERS AND CONTRIBUTES TO A BETTER QUALITY OF LIFE." />
         <div>
-            <Image src={vector4} alt="vectoreImage" />
+            <Image src={vector4} alt="vectoreImage"/>
         </div>
                 </div>   
 

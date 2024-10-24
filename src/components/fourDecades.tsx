@@ -94,7 +94,6 @@ const fourDecades = () => {
             </section>
           );
         })}
-          <div onClick={handleNextClick} className="cursor-pointer bg-[#C2AB80] w-fit p-3 m-1 text-center"> <Image src={next} alt="next" /></div>
       </div>
       <div className="timelineSectionBtn flex">
         <div onClick={handlePreviousClick} className="cursor-pointer bg-gray-400 w-fit p-3 m-1 text-center"> <Image src={previous} alt="previous" /></div>

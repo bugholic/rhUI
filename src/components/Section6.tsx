@@ -70,89 +70,100 @@ const section6Data = [
 
 
 const Section6 = () => {
-    const [index, setIndex] = useState(0)
 
-    const handleNext = () => {
-        setIndex(index + 1)
+    const [scrollPosition, setScrollPosition] = useState(0);
+
+    const handleNextClick = () => {
+        const container = document.querySelector('.sectionContainer');
+        if (container) {
+            const newPosition = Math.min(scrollPosition + 100, container.scrollWidth - container.clientWidth);
+            setScrollPosition(newPosition);
+            container.scrollTo({
+                left: newPosition,
+                behavior: 'smooth'
+            });
+        }
+    };
+
+    
+  const handlePreviousClick = () => {
+    const container = document.querySelector('.timelineContainer');
+    if (container) {
+      const newPosition = Math.max(scrollPosition - 100, container.scrollWidth + container.clientWidth);
+      setScrollPosition(newPosition);
+      container.scrollTo({
+        left: newPosition,
+        behavior: 'smooth'
+      });
     }
-
-    const handlePrevious = () => {
-        setIndex(index - 1)
-    }
-
-    // Auto Change Cards
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setIndex((prevIndex) => (prevIndex + 1) % section6Data.length);
-        }, 3000);
-
-        return () => clearInterval(interval);
-    }, []);
+  };
 
 
     return (
-        <>
-
+        <section className='w-full relative h-full'>
             {/* Mobile Ui */}
             <div className='md:w-3/4'>
                 <Heading title="Diverse Industries Driving Growth through Strategic Sector Expansion and Impact" />
             </div>
-            <main className="md:hidden">
-                <main className='p-10'>
-                    <div className="imgContainer">
-                        <Image src={section6Data[index].logo} alt="image" />
-                    </div>
-                    <p className='text-[#154466] py-5'>
-                        {section6Data[index].content}
-                    </p>
-                    <Link href="#" className='flex items-center gap-2 border-b pb-2 border-[#154466] w-fit'><div>Learn More</div> <Image src={arrow} alt="image" /></Link>
-                </main>
-                <section className="imagesCollage">
-                    <div>
-                        <Image src={section6Data[index].img1} className='w-full' alt="image" />
-                    </div>
-                    <div className='flex flex-row gap-5 w-full p-5'>
-                        <Image src={section6Data[index].img2} alt="image" className='w-full' />
-                        <Image src={section6Data[index].img3} alt="image" className='w-full' />
-                    </div>
-                    <div className="timelineSectionBtn flex p-5">
-                        <div className="bg-[#C2AB80] w-fit p-3 m-1 text-center"> <Image src={previous} alt="previous" /></div>
-                        <div className="bg-[#C2AB80] w-fit p-3 m-1 text-center"> <Image src={next} alt="next" /></div>
-                    </div>
-                </section>
+            <main className="md:hidden sectionContainer">
+                {section6Data.map((item, index) => (
+                    <section key={index}>
+                        <main className='p-10'>
+                            <div className="imgContainer">
+                                <Image src={item.logo} alt="image" />
+                            </div>
+                            <p className='text-[#154466] py-5'>
+                                {item.content}
+                            </p>
+                            <Link href="#" className='flex items-center gap-2 border-b pb-2 border-[#154466] w-fit'><div>Learn More</div> <Image src={arrow} alt="image" /></Link>
+                        </main>
+                        <section className="imagesCollage">
+                            <div>
+                                <Image src={item.img1} className='w-full' alt="image" />
+                            </div>
+                            <div className='flex flex-row gap-5 w-full p-5'>
+                                <Image src={item.img2} alt="image" className='w-1/2' />
+                                <Image src={item.img3} alt="image" className='w-1/2' />
+                            </div>
+                        </section>
+                    </section>
+                ))}
             </main>
 
 
 
             {/* Desktop Ui */}
-            <main className='hidden md:flex flex-row overflow-hidden'>
-                <section className='w-screen flex flex-shrink-0 snap-center'>
-                    <section className="left pr-2 w-1/2">
-                        <div className="contentTopPart w-3/4 m-auto">
-                            <div className="imgContainer">
-                                <Image src={section6Data[index].logo} className='w-[294px] h-[99px]' alt="Service Partners Logo" />
+            <main className='hidden md:flex flex-row overflow-scroll sectionContainer'>
+                {section6Data.map((item, index) => (
+                    <section className='w-screen flex flex-shrink-0 snap-center' key={index}>
+                        <section className="left pr-2 w-1/2">
+                            <div className="contentTopPart w-3/4 m-auto">
+                                <div className="imgContainer">
+                                    <Image src={item.logo} className='w-[294px] h-[99px]' alt="Service Partners Logo" />
+                                </div>
+                                <p className='text-[#154466] py-5 w-5/6'>
+                                    {item.content}
+                                </p>
+                                <Link href="#" className='flex items-center gap-2 border-b pb-2 border-[#154466] text-[#154466] w-fit'><div>Learn More</div> <Image src={arrow} alt="image" /></Link>
                             </div>
-                            <p className='text-[#154466] py-5 w-5/6'>
-                                {section6Data[index].content}
-                            </p>
-                            <Link href="#" className='flex items-center gap-2 border-b pb-2 border-[#154466] text-[#154466] w-fit'><div>Learn More</div> <Image src={arrow} alt="image" /></Link>
-                        </div>
 
-                        <div className="images grid grid-cols-2 gap-1 mt-20">
-                            <Image src={section6Data[index].img2} className='w-[50vw]' alt='img1' width={100} height={100} />
-                            <Image src={section6Data[index].img3} className='w-[50vw] mt-20' alt='img2' width={100} height={100} />
-                        </div>
+                            <div className="images grid grid-cols-2 gap-1 mt-20">
+                                <Image src={item.img2} className='w-[50vw]' alt='img1' width={100} height={100} />
+                                <Image src={item.img3} className='w-[50vw] mt-20' alt='img2' width={100} height={100} />
+                            </div>
+                        </section>
+                        <section className="right w-1/2">
+                            <Image src={item.img1} className='w-full' alt='img1' width={100} height={100} />
+                        </section>
                     </section>
-                    <section className="right w-1/2">
-                        <Image src={section6Data[index].img1} className='w-full' alt='img1' width={100} height={100} />
-                        <div className="timelineSectionBtn flex p-5 px-16 w-fit ml-auto">
-                            <div className="bg-[#C2AB80] w-fit py-4 px-6  m-1 text-center cursor-pointer" onClick={handlePrevious}> <Image src={previous} alt="previous" /></div>
-                            <div className="bg-[#C2AB80] w-fit py-4 px-6 m-1 text-center cursor-pointer" onClick={handleNext}> <Image src={next} alt="next" /></div>
-                        </div>
-                    </section>
-                </section>
+                ))}
             </main>
-        </>
+
+            <div className="timelineSectionBtn flex p-5 px relative w-[200px] md:ml-auto">
+                <div className="bg-[#C2AB80] w-fit py-4 px-6  m-1 text-center cursor-pointer" onClick={handlePreviousClick}> <Image src={previous} alt="previous" /></div>
+                <div className="bg-[#C2AB80] w-fit py-4 px-6 m-1 text-center cursor-pointer" onClick={handleNextClick}> <Image src={next} alt="next" /></div>
+            </div>
+        </section>
     )
 }
 
