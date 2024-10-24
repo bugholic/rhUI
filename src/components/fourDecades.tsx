@@ -5,10 +5,6 @@ import previous from "../assets/icons/previous.svg";
 import next from "../assets/icons/next.svg";
 import Image from "next/image";
 import Heading from "./Heading";
-<<<<<<< HEAD
-import { Carousel } from "@material-tailwind/react";
-=======
->>>>>>> 45b271a40806bbb7177c66927e48d80059ef083b
 
 const timelineData = [
   {
@@ -100,19 +96,8 @@ const fourDecades = () => {
         })}
       </div>
       <div className="timelineSectionBtn flex">
-<<<<<<< HEAD
-        <div className="bg-gray-400 w-fit p-3 m-1 text-center">
-          {" "}
-          <Image src={previous} alt="previous" />
-        </div>
-        <div className="bg-[#C2AB80] w-fit p-3 m-1 text-center">
-          {" "}
-          <Image src={next} alt="next" />
-        </div>
-=======
         <div onClick={handlePreviousClick} className="cursor-pointer bg-gray-400 w-fit p-3 m-1 text-center"> <Image src={previous} alt="previous" /></div>
         <div onClick={handleNextClick} className="cursor-pointer bg-[#C2AB80] w-fit p-3 m-1 text-center"> <Image src={next} alt="next" /></div>
->>>>>>> 45b271a40806bbb7177c66927e48d80059ef083b
       </div>
     </section>
   );
