@@ -45,39 +45,57 @@ const timelineData = [
 
 const fourDecades = () => {
 
+  const [scrollPosition, setScrollPosition] = useState(0);
 
-  const handleNextClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    e.currentTarget.scrollLeft += 100;
-  }
+  const handleNextClick = () => {
+    const container = document.querySelector('.timelineContainer');
+    if (container) {
+      const newPosition = Math.min(scrollPosition + 100, container.scrollWidth - container.clientWidth);
+      setScrollPosition(newPosition);
+      container.scrollTo({
+        left: newPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
 
-  const handlePreviousClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    e.currentTarget.scrollLeft -= 100;
-  }
+  const handlePreviousClick = () => {
+    const container = document.querySelector('.timelineContainer');
+    if (container) {
+      const newPosition = Math.max(scrollPosition - 100, 0);
+      setScrollPosition(newPosition);
+      container.scrollTo({
+        left: newPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
 
   return (
     <section className="p-5 lg:px-10">
       <Heading title="FOUR DECADES OF CONTINUOUS ADVANCEMENT SIGNIFY OUR UNWAVERING COMMITMENT TO PROGRESS, EVOLUTION, AND EXCELLENCE" />
-      <div className="flex flex-row overflow-x-scroll">
+      <div className="flex flex-row overflow-x-scroll timelineContainer" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
         {timelineData.map((item, index) => {
           return (
-              <section className="timelineSection" key={index}>
-                <h3 className="timelineHeading md:hidden text-[#154466] text-[38px] font-semibold">
-                  {item.year}
-                </h3>
-                <section className="timelineBarSection">
-                  <div className="timelinespot"></div>
-                  <div className="timelineLine"></div>
-                </section>
-                <h3 className="timelineHeading text-[#154466] text-[38px] font-semibold hidden md:block">
-                  {item.year}
-                </h3>
-                <h5 className="timelineInfo text-[#154466] text-[20px] font-semibold tracking-tighter">
-                  {item.infoHeading}
-                </h5>
-                <p className="timelineInfo text-[#154466] text-[16px] font-normal py-5 tracking-tighter">
-                  {item.info}
-                </p>
+            <section className="timelineSection" key={index}>
+              <h3 className="timelineHeading md:hidden text-[#154466] text-[38px] font-semibold">
+                {item.year}
+              </h3>
+              <section className="timelineBarSection">
+                <div className="timelinespot"></div>
+                <div className="timelineLine"></div>
               </section>
+              <h3 className="timelineHeading text-[#154466] text-[38px] font-semibold hidden md:block">
+                {item.year}
+              </h3>
+              <h5 className="timelineInfo text-[#154466] text-[20px] font-semibold tracking-tighter">
+                {item.infoHeading}
+              </h5>
+              <p className="timelineInfo text-[#154466] text-[16px] font-normal py-5 tracking-tighter">
+                {item.info}
+              </p>
+            </section>
           );
         })}
       </div>
