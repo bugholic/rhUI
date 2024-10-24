@@ -60,23 +60,30 @@ const cardData = [
 const Section5 = () => {
   return (
     <section>
+      <div className='w-[700px]'>
       <Heading title="PIONEERING URBAN EXCELLENCE AND COMMUNITY REVITALIZATION" />
+      </div>
 
       <main className='flex flex-col lg:flex-row items-center justify-center px-10 leading-6'>
 
         {cardData.map((card, index) => (
-          <section key={index} className='p-5 mt-10 w-full rounded-xl bg-[#F5F4F4] md:bg-transparent'>
-            <div className="relative thumbnail flex flex-col items-center justify-center">
-              <div className='absolute text-white text-3xl font-semibold text-center hidden md:block'>
+          <div key={index} className='flip-card'>
+            
+          <section className='p-5 mt-10 w-full rounded-xl bg-[#F5F4F4] md:bg-transparent flip-card-inner'>
+            <div className="relative thumbnail flex flex-col items-center justify-center flip-card-front">
+              <div className='absolute text-white text-2xl md:text-3xl px-10 sm:px-5 font-semibold text-center md:block'>
               {card.imgTitle.toUpperCase()}
               </div>
-              <Image src={card.img} alt="thumbnail1" className='w-[600px] h-[200px] md:h-[80vh] object-cover' />
+              <Image src={card.img} alt="thumbnail1" className=' md:h-[80vh] object-cover' />
             </div>
-            <div className='lg:hidden'>
-              <h3 className='text-[#154466] py-5 font-semibold'>
+            <div className='flip-card-back text-[#154466]'>
+            <div className='text-xl py-5 font-semibold text-center md:block hidden'>
+              {card.imgTitle.toUpperCase()}
+              </div>
+              <h3 className=' p-3 md:text-sm font-semibold'>  
                 {card.title}
               </h3>
-              <ul className='font-light text-[#154466]'>
+              <ul className='font-light md:text-sm pl-3'>
                 {card.keyPoints.map((point, index) => (
                   <li key={index} className='mx-5 my-2 list-disc'>
                     {point}
@@ -85,6 +92,8 @@ const Section5 = () => {
               </ul>
             </div>
           </section>
+          
+          </div>
         ))}
       </main>
     </section>
