@@ -76,7 +76,7 @@ const Section6 = () => {
     const handleNextClick = () => {
         const container = document.querySelector('.sectionContainer');
         if (container) {
-            const newPosition = Math.min(scrollPosition + 500, container.scrollWidth - container.clientWidth);
+            const newPosition = Math.min(scrollPosition + container.clientWidth, container.scrollWidth - container.clientWidth);
             setScrollPosition(newPosition);
             container.scrollTo({
                 left: newPosition,
@@ -89,7 +89,7 @@ const Section6 = () => {
   const handlePreviousClick = () => {
     const container = document.querySelector('.sectionContainer');
     if (container) {
-      const newPosition = Math.max(scrollPosition - 500, container.scrollWidth + container.clientWidth);
+      const newPosition = Math.max(scrollPosition - container.clientWidth,0);
       setScrollPosition(newPosition);
       container.scrollTo({
         left: newPosition,
