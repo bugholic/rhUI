@@ -54,6 +54,11 @@ const Section7 = () => {
       });
     }
   };
+
+  
+  setInterval(() => {
+    handleNextClick()
+  }, 5000);
     return (
         <main>
             <Heading title="news and updates" />

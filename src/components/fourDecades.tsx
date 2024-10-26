@@ -46,12 +46,12 @@ const fourDecades = () => {
   const handleNextClick = () => {
     const container = document.querySelector('.timelineContainer');
     if (container) {
-      const newPosition = Math.min(scrollPosition + 100, container.scrollWidth - container.clientWidth);
-      setScrollPosition(newPosition);
-      container.scrollTo({
-        left: newPosition,
-        behavior: 'smooth'
-      });
+        const newPosition = Math.min(scrollPosition + 100, container.scrollWidth - container.clientWidth);
+        setScrollPosition(newPosition);
+        container.scrollTo({
+          left: newPosition,
+          behavior: 'smooth'
+        });
     }
   };
 
@@ -67,6 +67,9 @@ const fourDecades = () => {
     }
   };
 
+  setInterval(() => {
+    handleNextClick()
+  }, 5000);
 
   return (
     <section className="p-5 lg:px-10">

@@ -99,6 +99,9 @@ const Section6 = () => {
   };
 
 
+  setInterval(() => {
+    handleNextClick()
+  }, 5000);
     return (
         <section className='w-full relative h-full'>
             {/* Mobile Ui */}

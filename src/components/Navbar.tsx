@@ -39,7 +39,7 @@ const Navbar = () => {
         </aside>
         {
           isMenuOpen &&
-          <nav className="menu font-light">
+          <nav className="menu text-2xl font-light">
             <aside>
               <Image src={closeMenu} className="w-[5vw] pt-5 ml-auto cursor-pointer md:hidden" alt="Riyadh holding" onClick={handleMenuClick} />
             </aside>
