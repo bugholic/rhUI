@@ -1,6 +1,6 @@
-'use client'
+"use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import previous from "../assets/icons/previous.svg";
 import next from "../assets/icons/next.svg";
 import Image from "next/image";
@@ -40,41 +40,63 @@ const timelineData = [
 ];
 
 const fourDecades = () => {
-
   const [scrollPosition, setScrollPosition] = useState(0);
 
-  const handleNextClick = () => {
-    const container = document.querySelector('.timelineContainer');
-    if (container) {
-        const newPosition = Math.min(scrollPosition + 100, container.scrollWidth - container.clientWidth);
+  useEffect(() => {
+    const handleNextClick = () => {
+      const container = document.querySelector(".timelineContainer");
+      if (container) {
+        const newPosition = Math.min(
+          scrollPosition + 100,
+          container.scrollWidth - container.clientWidth
+        );
         setScrollPosition(newPosition);
         container.scrollTo({
           left: newPosition,
-          behavior: 'smooth'
+          behavior: "smooth",
         });
-    }
-  };
+      }
+    };
 
-  const handlePreviousClick = () => {
-    const container = document.querySelector('.timelineContainer');
-    if (container) {
-      const newPosition = Math.max(scrollPosition - 100, 0);
-      setScrollPosition(newPosition);
-      container.scrollTo({
-        left: newPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
+    const handlePreviousClick = () => {
+      const container = document.querySelector(".timelineContainer");
+      if (container) {
+        const newPosition = Math.max(scrollPosition - 100, 0);
+        setScrollPosition(newPosition);
+        container.scrollTo({
+          left: newPosition,
+          behavior: "smooth",
+        });
+      }
+    };
 
-  setInterval(() => {
-    handleNextClick()
-  }, 5000);
+    setInterval(() => {
+      handleNextClick();
+    }, 3000);
+
+    const nextButton = document.getElementById("nextButton");
+    const previousButton = document.getElementById("previousButton");
+
+    if (nextButton && previousButton) {
+      nextButton.addEventListener("click", handleNextClick);
+      previousButton.addEventListener("click", handlePreviousClick);
+    }
+
+    return () => {
+      if (nextButton && previousButton) {
+        nextButton.removeEventListener("click", handleNextClick);
+        previousButton.removeEventListener("click", handlePreviousClick);
+      }
+    };
+  }, [scrollPosition]);
 
   return (
     <section className="p-5 lg:px-10">
       <Heading title="FOUR DECADES OF CONTINUOUS ADVANCEMENT SIGNIFY OUR UNWAVERING COMMITMENT TO PROGRESS, EVOLUTION, AND EXCELLENCE" />
-      <div className="flex flex-row overflow-x-scroll timelineContainer" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+      <div
+        className="flex flex-row overflow-x-scroll timelineContainer"
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+      >
         {timelineData.map((item, index) => {
           return (
             <section className="timelineSection" key={index}>
@@ -99,8 +121,18 @@ const fourDecades = () => {
         })}
       </div>
       <div className="timelineSectionBtn flex">
-        <div onClick={handlePreviousClick} className="cursor-pointer bg-gray-400 w-fit p-3 m-1 text-center"> <Image src={previous} alt="previous" /></div>
-        <div onClick={handleNextClick} className="cursor-pointer bg-[#C2AB80] w-fit p-3 m-1 text-center"> <Image src={next} alt="next" /></div>
+        <div
+          id="previousButton"
+          className="cursor-pointer bg-gray-400 w-fit p-3 m-1 text-center"
+        >
+          <Image src={previous} alt="previous" />
+        </div>
+        <div
+          id="nextButton"
+          className="cursor-pointer bg-[#C2AB80] w-fit p-3 m-1 text-center"
+        >
+          <Image src={next} alt="next" />
+        </div>
       </div>
     </section>
   );
