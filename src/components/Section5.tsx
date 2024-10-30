@@ -59,7 +59,7 @@ const cardData = [
 
 const Section5 = () => {
   return (
-    <section>
+    <section className='min-h-screen'>
       <div className='md:w-[700px]'>
       <Heading title="PIONEERING URBAN EXCELLENCE AND COMMUNITY REVITALIZATION" />
       </div>
@@ -70,13 +70,13 @@ const Section5 = () => {
           <div key={index} className='flip-card'>
             
           <section className='p-5 mt-10 w-full rounded-xl bg-[#F5F4F4] md:bg-transparent flip-card-inner'>
-            <div className="relative thumbnail flex flex-col items-center justify-center flip-card-front">
+            <div className="relative flex flex-col items-center justify-center flip-card-front">
               <div className='absolute text-white text-2xl md:text-3xl px-10 sm:px-5 font-semibold text-center md:block'>
               {card.imgTitle.toUpperCase()}
               </div>
               <Image src={card.img} alt="thumbnail1" className=' md:h-[80vh] object-cover' />
             </div>
-            <div className='flip-card-back text-[#154466]'>
+            <div className='flip-card-back text-[#154466] items-center'>
             <div className='text-xl py-5 font-semibold text-center md:block hidden'>
               {card.imgTitle.toUpperCase()}
               </div>

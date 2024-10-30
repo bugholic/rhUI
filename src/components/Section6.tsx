@@ -74,63 +74,43 @@ const section6Data = [
 const Section6 = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
 
-  useEffect(() => {
-    const handleNextClick = () => {
-      const container = document.querySelector(".sectionContainer");
-      if (container) {
-        const newPosition = Math.min(
-          scrollPosition + container.clientWidth,
-          container.scrollWidth - container.clientWidth
-        );
-        setScrollPosition(newPosition);
-        container.scrollTo({
-          left: newPosition,
-          behavior: "smooth",
-        });
-      }
-    };
 
-    const handlePreviousClick = () => {
-      const container = document.querySelector(".sectionContainer");
-      if (container) {
-        const newPosition = Math.max(scrollPosition - container.clientWidth, 0);
-        setScrollPosition(newPosition);
-        container.scrollTo({
-          left: newPosition,
-          behavior: "smooth",
-        });
-      }
-    };
-
-    setInterval(() => {
-      handleNextClick();
-    }, 3000);
-
-    const nextButton = document.getElementById("nextButton");
-    const previousButton = document.getElementById("previousButton");
-
-    if (nextButton && previousButton) {
-      nextButton.addEventListener("click", handleNextClick);
-      previousButton.addEventListener("click", handlePreviousClick);
+  const handleNextClick = () => {
+    const container = document.querySelector(".collageContainer");
+    if (container) {
+      const newPosition = Math.min(
+        scrollPosition + 400,
+        container.scrollWidth - container.clientWidth
+      );
+      console.log(newPosition)
+      setScrollPosition(newPosition);
+      container.scrollTo({
+        left: newPosition,
+        behavior: "smooth",
+      });
     }
-
-    return () => {
-      if (nextButton && previousButton) {
-        nextButton.removeEventListener("click", handleNextClick);
-        previousButton.removeEventListener("click", handlePreviousClick);
-      }
-    };
-  }, [scrollPosition]);
+  };
+  
+  const handlePreviousClick = () => {
+    const container = document.querySelector(".collageContainer");
+    if (container) {
+      const newPosition = Math.max(scrollPosition - 450, 0);
+      setScrollPosition(newPosition);
+      container.scrollTo({
+        left: newPosition,
+        behavior: "smooth",
+      });
+    }
+  };
   return (
-    <section className="w-full relative h-full">
+    <section className="w-full min-h-screen mt-10">
       {/* Mobile Ui */}
       <div className="md:w-3/4">
         <Heading title="Diverse Industries Driving Growth through Strategic Sector Expansion and Impact" />
       </div>
       <main
-        className="flex flex-row md:hidden overflow-scroll sectionContainer"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-      >
+        className="flex flex-row md:hidden overflow-scroll collageContainer">
         {section6Data.map((item, index) => (
           <section key={index} className="min-w-full">
             <main className="p-10">
@@ -145,9 +125,9 @@ const Section6 = () => {
                 <div>Learn More</div> <Image src={arrow} alt="image" />
               </Link>
             </main>
-            <section className="imagesCollage">
+            <section className="imagesCollage flex flex-col items-center justify-center">
               <div>
-                <Image src={item.img1} className="w-full" alt="image" />
+                <Image src={item.img1} className="w-[375px] h-[342px]" alt="image" />
               </div>
               <div className="flex flex-row gap-5 w-full p-5">
                 <Image src={item.img2} alt="image" className="w-1/2" />
@@ -159,7 +139,7 @@ const Section6 = () => {
       </main>
 
       {/* Desktop Ui */}
-      <main className="hidden md:flex flex-row overflow-scroll sectionContainer">
+      <main className="hidden md:flex flex-row overflow-scroll collageContainer" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
         {section6Data.map((item, index) => (
           <section
             className="w-screen flex flex-shrink-0 snap-center"
@@ -213,19 +193,19 @@ const Section6 = () => {
         ))}
       </main>
 
-      <div className="timelineSectionBtn flex p-5 px relative w-[200px] md:ml-auto">
+      <div className="timelineSectionBtn flex p-5 px w-[200px] md:ml-auto">
         <div
           className="bg-[#C2AB80] w-fit py-4 px-6  m-1 text-center cursor-pointer"
           id="previousButton"
+          onClick={handlePreviousClick}
         >
-          {" "}
           <Image src={previous} alt="previous" />
         </div>
         <div
           className="bg-[#C2AB80] w-fit py-4 px-6 m-1 text-center cursor-pointer"
           id="nextButton"
+          onClick={handleNextClick}
         >
-          {" "}
           <Image src={next} alt="next" />
         </div>
       </div>

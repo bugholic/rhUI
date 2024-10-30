@@ -5,6 +5,7 @@ import logo from "@/assets/images/riyadhHoldingsLogo.svg";
 import menu from "@/assets/icons/Frame 6menu.svg";
 import closeMenu from "@/assets/icons/closeMenu.svg";
 import { useState } from "react";
+import downArrow from "@/assets/icons/dropDownArrow.svg"
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,35 +35,34 @@ const Navbar = () => {
         <aside className="hidden lg:flex items-center">
           <div className="navbarItems text-nowrap flex w-full gap-[5vw] tracking-tighter text-sm font-normal">
             <div>Home</div>
-            <div>About Us</div>
-            <div>Sector</div>
-            <div>Media Center</div>
+            <div className="flex items-center">
+              <div>About Us </div><div className="pl-2"><Image src={downArrow} width={16} alt="dropDown" /> </div>
+            </div>
+            <div className="flex items-center">
+              <div>Sector</div><div className="pl-2"><Image src={downArrow} width={16} alt="dropDown" /> </div>
+            </div>
+            <div className="flex items-center">
+              <div>Media Center</div><div className="pl-2"><Image src={downArrow} width={16} alt="dropDown" /> </div>
+            </div>
             <div>Join Us</div>
             <div>Career</div>
             <div>Contact Us</div>
           </div>
 
           <div className="dropdown relative inline-block pl-20">
-            <button className="dropbtn bg-transparent p-4 border-0 flex">
-              العربية
-              <span>
-                <svg
-                  className="-mr-1 h-5 w-5 text-white"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  aria-hidden="true"
-                  data-slot="icon"
-                >
-                </svg>
-              </span>
-            </button>
+            <div className="dropbtn cursor-pointer bg-transparent p-4 border-0 flex">
+              <div className="flex items-center">
+                <div>العربية</div><Image src={downArrow} width={16} alt="dropDown" /> 
+              </div>
+            </div>
             <div className="dropdown-content hidden absolute bg-transparent min-w-40 z-10">
               <a href="#">English</a>
             </div>
           </div>
+          <div className="pl-2"><Image src={downArrow} width={16} alt="dropDown" /> </div>
         </aside>
         {isMenuOpen && (
-          <nav className="menu text-2xl font-light">
+          <nav className="mobile-nav-view text-2xl">
             <aside>
               <Image
                 src={closeMenu}
@@ -72,14 +72,28 @@ const Navbar = () => {
               />
             </aside>
             <div>Home</div>
-            <div>About Us</div>
-            <div>Our Sectors</div>
-            <div className="flex">
-              Media Center
+            <div className="flex items-center">
+              <div>About Us </div><div className="pl-2"><Image src={downArrow} width={16} alt="dropDown" /> </div>
+            </div>
+            <div className="flex items-center">
+              <div>Sector</div><div className="pl-2"><Image src={downArrow} width={16} alt="dropDown" /> </div>
+            </div>
+            <div className="flex items-center">
+              <div>Media Center</div><div className="pl-2"><Image src={downArrow} width={16} alt="dropDown" /> </div>
             </div>
             <div>Join Us</div>
             <div>Career</div>
             <div>Contact Us</div>
+            <div className="dropdown relative inline-block">
+              <div className="dropbtn cursor-pointer bg-transparent p-4 border-0 flex">
+                <div className="flex">
+                  <div>العربية </div><Image src={downArrow} width={16} alt="dropDown" /> 
+                </div>
+              </div>
+              <div className="dropdown-content hidden absolute bg-transparent min-w-40 z-10">
+                <a href="#">English</a>
+              </div>
+            </div>
           </nav>
         )}
       </nav>

@@ -23,17 +23,31 @@ const newsData = [
     date: "19/10/2024",
     title: "Lorem ipsum dolor sit amet.",
   },
+  {
+    img: newsImg,
+    date: "19/10/2024",
+    title: "Lorem ipsum dolor sit amet.",
+  },
+  {
+    img: newsImg,
+    date: "19/10/2024",
+    title: "Lorem ipsum dolor sit amet.",
+  },
+  {
+    img: newsImg,
+    date: "19/10/2024",
+    title: "Lorem ipsum dolor sit amet.",
+  },
 ];
 
 const Section7 = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
 
-  useEffect(() => {
     const handleNextClick = () => {
       const container = document.querySelector(".sectionContainer");
       if (container) {
         const newPosition = Math.min(
-          scrollPosition + 300,
+          scrollPosition + 450,
           container.scrollWidth - container.clientWidth
         );
         setScrollPosition(newPosition);
@@ -47,7 +61,7 @@ const Section7 = () => {
     const handlePreviousClick = () => {
       const container = document.querySelector(".sectionContainer");
       if (container) {
-        const newPosition = Math.max(scrollPosition - 300, 0);
+        const newPosition = Math.max(scrollPosition - 450, 0);
         setScrollPosition(newPosition);
         container.scrollTo({
           left: newPosition,
@@ -56,35 +70,17 @@ const Section7 = () => {
       }
     };
 
-    setInterval(() => {
-      handleNextClick();
-    }, 3000);
-
-    const nextButton = document.getElementById("nextButton");
-    const previousButton = document.getElementById("previousButton");
-
-    if (nextButton && previousButton) {
-      nextButton.addEventListener("click", handleNextClick);
-      previousButton.addEventListener("click", handlePreviousClick);
-    }
-
-    return () => {
-      if (nextButton && previousButton) {
-        nextButton.removeEventListener("click", handleNextClick);
-        previousButton.removeEventListener("click", handlePreviousClick);
-      }
-    };
-  }, [scrollPosition]);
   return (
     <main>
       <Heading title="news and updates" />
-      <main className="md:grid grid-cols-3 gap-2 flex overflow-x-scroll sectionContainer"  style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
+      <main className="flex overflow-scroll sectionContainer" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
         {newsData.map((item, index) => (
-          <section className="newsCard min-w-full" key={index}>
+          <section className="newsCard min-w-[450px]" key={index}>
             <Image
               src={item.img}
               alt="image"
-              className="w-[340px] h-[340px] m-auto object-contain"
+            className="w-[427px] h-[415px
+            ] m-auto object-contain"
             />
             <div className="content p-10">
               <p className="date text-[#C2AB80]">
@@ -105,12 +101,15 @@ const Section7 = () => {
 
       <div className="timelineSectionBtn flex p-5 px relative w-[200px] md:ml-auto">
         <div
-          className="bg-[#C2AB80] w-fit py-4 px-6  m-1 text-center cursor-pointer"
-          id="previousButton"
+         onClick={handlePreviousClick}
+        className="bg-[#C2AB80] w-fit py-4 px-6  m-1 text-center cursor-pointer"
+        id="previousButton"
         >
           <Image src={previous} alt="previous" />
         </div>
         <div
+         onClick={handleNextClick}
+        
           className="bg-[#C2AB80] w-fit py-4 px-6 m-1 text-center cursor-pointer"
           id="nextButton"
         >

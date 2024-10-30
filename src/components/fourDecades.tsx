@@ -70,10 +70,6 @@ const fourDecades = () => {
       }
     };
 
-    setInterval(() => {
-      handleNextClick();
-    }, 3000);
-
     const nextButton = document.getElementById("nextButton");
     const previousButton = document.getElementById("previousButton");
 
