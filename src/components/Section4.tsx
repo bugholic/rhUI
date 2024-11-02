@@ -20,12 +20,14 @@ const section4Data = [
 const Section4 = () => {
     return (
         <section>
-            <div className="flex">
-        <Heading title="WE DRIVE STRATEGIC IMPACT THAT RESONATES WITH OUR PARTNERS AND CONTRIBUTES TO A BETTER QUALITY OF LIFE." />
-        <div>
-            <Image src={vector4} width={500} alt="vectoreImage"/>
-        </div>
-                </div>   
+            <div className="relative md:flex md:flex-row-reverse">
+                <div>
+                    <Image src={vector4} className=" md:w-[300px] w-[40vw] absolute -top-28 right-0" alt="vectoreImage" />
+                </div>
+                <h1 className="sm:w-3/4 mr-auto p-10 text-[#C2AB80] text-[32px] lg:text-[40px] font-semibold">
+                    WE DRIVE <br className="sm:hidden" /> STRATEGIC IMPACT THAT RESONATES WITH OUR PARTNERS AND CONTRIBUTES TO A BETTER QUALITY OF LIFE.
+                </h1>
+            </div>
 
             <section className='p-10 lg:grid grid-cols-3 gap-20'>
                 {section4Data.map((item, index) => (
@@ -34,7 +36,7 @@ const Section4 = () => {
                         <div className='flex flex-col px-5'>
                             <div className={`bg-[#${item.bgColor}] w-20 h-2 mt-6`}></div>
                             <p className='text-[#154466] py-2 font-semibold text-[20px] lg:text-[24px]'>
-                                {item.title}    
+                                {item.title}
                             </p>
                         </div>
                     </div>
