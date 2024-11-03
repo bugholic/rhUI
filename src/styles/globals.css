@@ -127,3 +127,9 @@ img {
 .mobile-nav-view{
   font-weight: 400;
 }
+
+.activeTab{
+  border-right: 5px solid #C2AB80;
+  width: max-content;
+  padding-right: 20px;
+}
