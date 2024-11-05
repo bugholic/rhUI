@@ -8,7 +8,10 @@ const config: Config = ({
   ],
   theme: {
     extend: {
-      colors: {},
+      colors: {
+        "golden":"#C2AB80",
+        "blue": "#154466",
+      },
       fontFamily: {
         somar: ["somar"],
         somarBold: ["somar-bold"],
