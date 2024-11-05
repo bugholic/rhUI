@@ -30,17 +30,33 @@ const Section4 = () => {
             </div>
 
             <section className='p-10 lg:grid grid-cols-3 gap-20'>
-                {section4Data.map((item, index) => (
-                    <div key={index} className="indexSection flex flex-row">
-                        <div className='font-bold text-[#154466] text-[32px] lg:text-[40px]'>0{index + 1}</div>
-                        <div className='flex flex-col px-5'>
-                            <div className={`bg-[#${item.bgColor}] w-20 h-2 mt-6`}></div>
-                            <p className='text-[#154466] py-2 font-semibold text-[20px] lg:text-[24px]'>
-                                {item.title}
-                            </p>
-                        </div>
+                <div className="indexSection flex flex-row">
+                    <div className='font-bold text-blue text-[32px] lg:text-[40px]'>01</div>
+                    <div className='flex flex-col px-5'>
+                        <div className={`bg-golden w-20 h-2 mt-6`}></div>
+                        <p className='text-blue py-2 font-semibold text-[20px] lg:text-[24px]'>
+                            Participate in the enhancement of the quality of life in Riyadh
+                        </p>
                     </div>
-                ))}
+                </div>
+                <div className="indexSection flex flex-row">
+                    <div className='font-bold text-blue text-[32px] lg:text-[40px]'>02</div>
+                    <div className='flex flex-col px-5'>
+                        <div className={`bg-[#609080] w-20 h-2 mt-6`}></div>
+                        <p className='text-blue py-2 font-semibold text-[20px] lg:text-[24px]'>
+                            Support Riyadh municipality's strategic agenda in coordination with other strategic entities within its ecosystem
+                        </p>
+                    </div>
+                </div>
+                <div className="indexSection flex flex-row">
+                    <div className='font-bold text-blue text-[32px] lg:text-[40px]'>03</div>
+                    <div className='flex flex-col px-5'>
+                        <div className={`bg-blue w-20 h-2 mt-6`}></div>
+                        <p className='text-blue py-2 font-semibold text-[20px] lg:text-[24px]'>
+                            Enhance value chains for critical sectors to contribute to Riyadh's development
+                        </p>
+                    </div>
+                </div>
             </section>
 
 
