@@ -19,9 +19,6 @@ const page = () => {
       </div>
       <StorySection />
       <FourDecades />
-      {/* <div className="relative">
-      <Image src={Sec4Vector}  className="w-1/2 ml-auto mt-3" alt="vector"/>
-      </div> */}
       <Section4 />  
       <Section5 />
       <Section6 />

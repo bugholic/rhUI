@@ -18,7 +18,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="flex justify-between text-white items-center lg:px-14 p-5 lg:w-[1312px]">
+      <nav className="flex justify-between text-white items-center lg:px-14 p-5">
         <div>
           <Image
             src={logo}
@@ -35,17 +35,18 @@ const Navbar = () => {
           />
         </aside>
         <aside className="hidden lg:flex items-center">
-          <div className="navbarItems text-nowrap flex w-full gap-[5vw] tracking-tighter text-sm font-normal">
+          <div className="navbarItems text-nowrap flex w-full gap-[3vw] tracking-tighter text-sm font-normal">
             <div>Home</div>
             <div className="dropdown relative inline-block">
-              <div className="flex items-center cursor-pointer" onClick={() => setDropDownStatus(!dropDownStatus)}>
+              <div className="dropbtn flex items-center cursor-pointer" onClick={() => setDropDownStatus(!dropDownStatus)}>
+                {/* <div className="dropbtn cursor-pointer bg-transparent p-4 border-0 flex"> */}
                 <div>About Us</div>
                 <div className="pl-2">
                   <Image src={downArrow} width={16} alt="dropDown" className={`transition-transform duration-300 ${dropDownStatus ? 'rotate-180' : ''}`} />
                 </div>
               </div>
               {dropDownStatus && (
-                <div className="dropdown-content sm:absolute left-0 mt-2 w-48 shadow-lg rounded-md py-2 z-10">
+                <div className="dropdown-content sm:absolute left-0 mt-2 w-fit shadow-lg rounded-md py-2 z-10">
                   <a href="#" className="block px-4 py-2 hover:bg-gray-100 hover:text-black ">Overview</a>
                   <a href="#" className="block px-4 py-2 hover:bg-gray-100 hover:text-black">Vision & Mission</a>
                   <a href="#" className="block px-4 py-2 hover:bg-gray-100 hover:text-black">Leadership</a>
@@ -66,10 +67,10 @@ const Navbar = () => {
           <div className="dropdown relative inline-block sm:ml-20">
             <div className="dropbtn cursor-pointer bg-transparent p-4 border-0 flex">
               <div className="flex items-center">
-                <div>العربية</div><Image src={downArrow} width={16} alt="dropDown" />
+                <div>العربية</div><Image src={downArrow} width={16} alt="dropDown" className="ml-2" />
               </div>
             </div>
-            <div className="dropdown-content hidden absolute bg-transparent min-w-40 z-10">
+            <div className="dropdown-content hidden absolute bg-transparent text-center w-full z-10">
               <a href="#">English</a>
             </div>
           </div>

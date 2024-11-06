@@ -4,13 +4,13 @@ import Image from "next/image";
 const StorySection = () => {
   return (
     <>
-      <section className="w-full pr-10">
+      <section className="w-full pr-10 pt-10">
         <h1 className="p-10 text-[#C2AB80] text-[32px] font-semibold lg:hidden">
           Foundation: <br /> Our Story
         </h1>
         <main className="lg:flex lg:flex-row-reverse w-full">
-        <div className="p-10 pt-0 text-[#154466] text-[16px] font-normal w-full lg:w-[600px]">
-        <h1 className="py-10 text-[#C2AB80] text-[32px] font-semibold hidden lg:block">
+        <div className="p-10 pt-5 text-[#154466] text-[16px] font-normal w-full lg:w-[700px]">
+        <h1 className="py-10 text-[#C2AB80] text-5xl tracking-wider font-semibold hidden lg:block">
         Our Story : Foundation
         </h1>
           <p>

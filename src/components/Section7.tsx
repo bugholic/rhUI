@@ -71,9 +71,9 @@ const Section7 = () => {
     };
 
   return (
-    <main>
+    <main className="px-10">
       <Heading title="news and updates" />
-      <main className="flex overflow-scroll sectionContainer" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
+      <main className="flex w-[89vw] m-auto overflow-scroll sectionContainer" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
         {newsData.map((item, index) => (
           <section className="newsCard min-w-[450px]" key={index}>
             <Image

@@ -59,12 +59,12 @@ const cardData = [
 
 const Section5 = () => {
   return (
-    <section className='min-h-screen'>
+    <section className='min-h-screen pl-10 pt-10'>
       <div className='md:w-[700px]'>
       <Heading title="PIONEERING URBAN EXCELLENCE AND COMMUNITY REVITALIZATION" />
       </div>
 
-      <main className='flex flex-col lg:flex-row items-center justify-center px-10 leading-6'>
+      <main className='flex flex-col lg:flex-row items-center justify-center leading-6'>
 
         {cardData.map((card, index) => (
           <div key={index} className='flip-card'>

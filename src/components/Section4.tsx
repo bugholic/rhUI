@@ -19,12 +19,12 @@ const section4Data = [
 
 const Section4 = () => {
     return (
-        <section>
-            <div className="relative md:flex md:flex-row-reverse">
+        <section className="pt-20 pl-20">
+            <div className="relative md:flex md:flex-row-reverse overflow-x-clip">
                 <div>
-                    <Image src={vector4} className=" md:w-[300px] w-[40vw] absolute -top-28 right-0" alt="vectoreImage" />
+                    <Image src={vector4} className=" md:w-[350px] w-[40vw] absolute -top-[200px] -right-14 " alt="vectoreImage" />
                 </div>
-                <h1 className="sm:w-3/4 mr-auto p-10 text-[#C2AB80] text-[32px] lg:text-[40px] font-semibold">
+                <h1 className="sm:w-[65%] mr-auto text-[#C2AB80] text-[32px] lg:text-[40px] font-semibold">
                     WE DRIVE <br className="sm:hidden" /> STRATEGIC IMPACT THAT RESONATES WITH OUR PARTNERS AND CONTRIBUTES TO A BETTER QUALITY OF LIFE.
                 </h1>
             </div>

@@ -105,7 +105,7 @@ const Section6 = () => {
   return (
     <section className="w-full min-h-screen mt-10">
       {/* Mobile Ui */}
-      <div className="md:w-3/4">
+      <div className="md:w-3/4 pl-10 mt-40">
         <Heading title="Diverse Industries Driving Growth through Strategic Sector Expansion and Impact" />
       </div>
       <main
@@ -146,7 +146,7 @@ const Section6 = () => {
             key={index}
           >
             <section className="left pr-2 w-1/2">
-              <div className="contentTopPart w-3/4 m-auto">
+              <div className="contentTopPart w-3/4 pl-16 m-auto">
                 <div className="imgContainer">
                   <Image
                     src={item.logo}

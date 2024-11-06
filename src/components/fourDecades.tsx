@@ -86,9 +86,13 @@ const fourDecades = () => {
     };
   }, [scrollPosition]);
 
+  let index = timelineData.length - timelineData.length
+
   return (
-    <section className="p-5 lg:px-10">
+    <section className="p-5 lg:px-10 pt-10" aria-readonly>
+      <div className="md:w-4/5">
       <Heading title="FOUR DECADES OF CONTINUOUS ADVANCEMENT SIGNIFY OUR UNWAVERING COMMITMENT TO PROGRESS, EVOLUTION, AND EXCELLENCE" />
+      </div>
       {/* Mobile View */}
       <div
         className="flex flex-row overflow-x-scroll timelineContainer md:hidden"
@@ -138,39 +142,58 @@ const fourDecades = () => {
         className="flex flex-row overflow-x-scroll timelineContainer"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
+        {/* upper section */}
         <section className="timelineSection ml-[500px]">
           <h5 className="timelineInfo text-blue text-[20px] font-semibold tracking-tighter">
-            RIYADH HOLDING COMPANY ESTABLISHMENT
+            {/* RIYADH HOLDING COMPANY ESTABLISHMENT */}
+            {timelineData[index + 1].infoHeading}
+
           </h5>
           <p className="timelineInfo text-blue text-[16px] font-normal py-5 tracking-tighter">
-            The transformation into Riyadh Holding Company and the launch of Scrap Metal City as a Public Good Project.
+            {/* The transformation into Riyadh Holding Company and the launch of Scrap Metal City as a Public Good Project. */}
+            {timelineData[index + 1].info}
           </p>
           <h3 className="timelineHeading text-blue text-[38px] font-semibold hidden md:block">
-            2012
+            {/* 2012 */}
+            {timelineData[index + 1].year}
           </h3>
         </section>
 
         <section className="timelineSection ml-[130px]">
           <h5 className="timelineInfo text-blue text-[20px] font-semibold tracking-tighter">
-          INNOVATIVE VENTURES
+            {/* INNOVATIVE VENTURES */}
+            {timelineData[index + 3].infoHeading}
           </h5>
           <p className="timelineInfo text-blue text-[16px] font-normal py-5 tracking-tighter">
-          Opening East Center for Spare Parts, the only official center authorized to sell used car spare parts in Riyadh
+            {timelineData[index + 3].info}
           </p>
           <h3 className="timelineHeading text-blue text-[38px] font-semibold hidden md:block">
-          2018
+            {timelineData[index + 3].year}
           </h3>
         </section>
-        
+
+        {/* <section className="timelineSection ml-[130px]">
+          <h5 className="timelineInfo text-blue text-[20px] font-semibold tracking-tighter">
+            Strategic Expansion
+          </h5>
+          <p className="timelineInfo text-blue text-[16px] font-normal py-5 tracking-tighter">
+            Launched our five-year strategy, emphasizing citizen-centric solutions and Riyadh's ecosystem. Agreements with Riyadh municipality were signed to develop Aloraiyja Industrial City and activate King Salman Oasis
+          </p>
+          <h3 className="timelineHeading text-blue text-[38px] font-semibold hidden md:block">
+            2018
+          </h3>
+        </section> */}
+
+        {/* upper section */}
       </div>
 
-
+      {/* btn and line area */}
       <section className="timelineBarSection flex">
         <div
           id="previousButton"
-          className="cursor-pointer bg-gray-400 w-fit p-3 m-1 text-center"
+          className="cursor-pointer bg-gray-400 w-fit p-3 text-center"
         >
-          <Image src={previous} alt="previous" />
+          <Image src={previous} width={50} alt="previous" />
         </div>
 
         <div className="timelineLine"></div>
@@ -183,43 +206,61 @@ const fourDecades = () => {
         <div className="h-5 w-28 rounded-full bg-golden"></div>
         <div className="timelineLine"></div>
         <div
-          id="nextButton"
-          className="cursor-pointer bg-[#C2AB80] w-fit p-3 m-1 text-center"
+          // id="nextButton"
+          className="cursor-pointer bg-[#C2AB80] w-fit p-2 text-center"
+          onClick={() => { index++ }}
         >
-          <Image src={next} alt="next" />
+          <Image src={next} width={50} alt="next" />
         </div>
       </section>
+
+      {/* btn and line area */}
       <div
         className="flex flex-row overflow-x-scroll timelineContainer"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
+
+        {/* bottom section */}
         <section className="timelineSection ml-[220px]">
           <h3 className="timelineHeading text-blue text-[38px] font-semibold hidden md:block">
-            1985
+            {timelineData[index + 0].year}
           </h3>
           <h5 className="timelineInfo text-blue text-[20px] font-semibold tracking-tighter">
-            Pioneering Engineering
+            {timelineData[index + 0].infoHeading}
           </h5>
           <p className="timelineInfo text-blue text-[16px] font-normal py-5 tracking-tighter">
-            Foundations in the Al Malgliah and Al Deira Markets
+            {timelineData[index + 0].info}
+            {/* Foundations in the Al Malgliah and Al Deira Markets */}
           </p>
         </section>
 
 
         <section className="timelineSection ml-[100px]">
           <h3 className="timelineHeading text-blue text-[38px] font-semibold hidden md:block">
-            2015
+            {timelineData[index + 2].year}
           </h3>
           <h5 className="timelineInfo text-blue text-[20px] font-semibold tracking-tighter">
-            URBAN REVITALIZATION
+            {timelineData[index + 2].infoHeading}
           </h5>
           <p className="timelineInfo text-blue text-[16px] font-normal py-5 tracking-tighter">
-            Transformation of Haraj Ibn Qasim with a new visitor experience, increased security, and new operational standards.
+            {timelineData[index + 2].info}
+          </p>
+        </section>
+
+        <section className="timelineSection ml-[400px]">
+          <h3 className="timelineHeading text-blue text-[38px] font-semibold hidden md:block">
+            2019
+          </h3>
+          <h5 className="timelineInfo text-blue text-[20px] font-semibold tracking-tighter">
+            URBAN COMMERCIAL DEVELOPMENT
+          </h5>
+          <p className="timelineInfo text-blue text-[16px] font-normal py-5 tracking-tighter">
+            Launched Arriyadh Gate, a shopping complex for international brands
           </p>
         </section>
 
 
-
+        {/* bottom section */}
       </div>
 
       {/* Desktop View */}

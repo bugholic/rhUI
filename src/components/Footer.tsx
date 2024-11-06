@@ -19,7 +19,7 @@ const projects = [
 
 const Footer = () => {
     return (
-        <footer className="bg-[#154466] md:flex md:items-center">
+        <footer className="bg-[#154466] md:flex md:items-center pl-12">
             <main className=' p-5 pb-0 md:flex md:flex-row-reverse w-full'>
                 <div className="contact-Information w-1/2">
 
