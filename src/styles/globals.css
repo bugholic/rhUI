@@ -23,7 +23,7 @@ body {
 }
 
 #heroSection {
-  background-image: url("../assets/images/heroBg.svg");
+  background-image: url("../assets/images/heroBg.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top right;
