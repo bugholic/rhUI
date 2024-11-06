@@ -89,7 +89,7 @@ const fourDecades = () => {
   let index = timelineData.length - timelineData.length
 
   return (
-    <section className="p-5 lg:px-10 pt-10" aria-readonly>
+    <section className="p-5 md:px-10 pt-10" aria-readonly>
       <div className="md:w-4/5">
       <Heading title="FOUR DECADES OF CONTINUOUS ADVANCEMENT SIGNIFY OUR UNWAVERING COMMITMENT TO PROGRESS, EVOLUTION, AND EXCELLENCE" />
       </div>
@@ -139,7 +139,7 @@ const fourDecades = () => {
 
       {/* Desktop View */}
       <div
-        className="flex flex-row overflow-x-scroll timelineContainer"
+        className="md:flex flex-row overflow-x-scroll timelineContainer hidden"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {/* upper section */}
@@ -172,23 +172,11 @@ const fourDecades = () => {
           </h3>
         </section>
 
-        {/* <section className="timelineSection ml-[130px]">
-          <h5 className="timelineInfo text-blue text-[20px] font-semibold tracking-tighter">
-            Strategic Expansion
-          </h5>
-          <p className="timelineInfo text-blue text-[16px] font-normal py-5 tracking-tighter">
-            Launched our five-year strategy, emphasizing citizen-centric solutions and Riyadh's ecosystem. Agreements with Riyadh municipality were signed to develop Aloraiyja Industrial City and activate King Salman Oasis
-          </p>
-          <h3 className="timelineHeading text-blue text-[38px] font-semibold hidden md:block">
-            2018
-          </h3>
-        </section> */}
-
         {/* upper section */}
       </div>
 
       {/* btn and line area */}
-      <section className="timelineBarSection flex">
+      <section className="hidden md:flex ">
         <div
           id="previousButton"
           className="cursor-pointer bg-gray-400 w-fit p-3 text-center"
@@ -216,7 +204,7 @@ const fourDecades = () => {
 
       {/* btn and line area */}
       <div
-        className="flex flex-row overflow-x-scroll timelineContainer"
+        className="md:flex hidden flex-row overflow-x-scroll timelineContainer"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
 

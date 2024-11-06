@@ -19,9 +19,9 @@ const projects = [
 
 const Footer = () => {
     return (
-        <footer className="bg-[#154466] md:flex md:items-center pl-12">
+        <footer className="bg-[#154466] md:flex md:items-center md:pl-12">
             <main className=' p-5 pb-0 md:flex md:flex-row-reverse w-full'>
-                <div className="contact-Information w-1/2">
+                <div className="contact-Information md:w-1/2 w-10/12">
 
                     <h1 className="py-5 text-[#C2AB80] text-2xl font-semibold">
                         CONTACT US

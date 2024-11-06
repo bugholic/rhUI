@@ -19,17 +19,17 @@ const section4Data = [
 
 const Section4 = () => {
     return (
-        <section className="pt-20 pl-20">
-            <div className="relative md:flex md:flex-row-reverse overflow-x-clip">
+        <section className="md:pt-20 md:pl-20 pl-5">
+            <div className="md:relative md:flex md:flex-row-reverse overflow-x-clip">
                 <div>
-                    <Image src={vector4} className=" md:w-[350px] w-[40vw] absolute -top-[200px] -right-14 " alt="vectoreImage" />
+                    <Image src={vector4} className=" md:w-[350px] w-[40vw] ml-auto md:absolute md:-top-[200px] md:-right-14 " alt="vectoreImage" />
                 </div>
-                <h1 className="sm:w-[65%] mr-auto text-[#C2AB80] text-[32px] lg:text-[40px] font-semibold">
+                <h1 className="sm:w-[65%] mr-auto text-[#C2AB80] text-[32px] lg:text-[40px] font-semibold pr-10">
                     WE DRIVE <br className="sm:hidden" /> STRATEGIC IMPACT THAT RESONATES WITH OUR PARTNERS AND CONTRIBUTES TO A BETTER QUALITY OF LIFE.
                 </h1>
             </div>
 
-            <section className='p-10 lg:grid grid-cols-3 gap-20'>
+            <section className='p-5 lg:grid grid-cols-3 gap-20'>
                 <div className="indexSection flex flex-row">
                     <div className='font-bold text-blue text-[32px] lg:text-[40px]'>01</div>
                     <div className='flex flex-col px-5'>

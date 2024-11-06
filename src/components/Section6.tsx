@@ -105,7 +105,7 @@ const Section6 = () => {
   return (
     <section className="w-full min-h-screen mt-10">
       {/* Mobile Ui */}
-      <div className="md:w-3/4 pl-10 mt-40">
+      <div className="md:w-3/4 md:pl-10 pl-5 mt-40">
         <Heading title="Diverse Industries Driving Growth through Strategic Sector Expansion and Impact" />
       </div>
       <main

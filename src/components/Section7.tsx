@@ -43,43 +43,45 @@ const newsData = [
 const Section7 = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
 
-    const handleNextClick = () => {
-      const container = document.querySelector(".sectionContainer");
-      if (container) {
-        const newPosition = Math.min(
-          scrollPosition + 450,
-          container.scrollWidth - container.clientWidth
-        );
-        setScrollPosition(newPosition);
-        container.scrollTo({
-          left: newPosition,
-          behavior: "smooth",
-        });
-      }
-    };
+  const handleNextClick = () => {
+    const container = document.querySelector(".sectionContainer");
+    if (container) {
+      const newPosition = Math.min(
+        scrollPosition + 450,
+        container.scrollWidth - container.clientWidth
+      );
+      setScrollPosition(newPosition);
+      container.scrollTo({
+        left: newPosition,
+        behavior: "smooth",
+      });
+    }
+  };
 
-    const handlePreviousClick = () => {
-      const container = document.querySelector(".sectionContainer");
-      if (container) {
-        const newPosition = Math.max(scrollPosition - 450, 0);
-        setScrollPosition(newPosition);
-        container.scrollTo({
-          left: newPosition,
-          behavior: "smooth",
-        });
-      }
-    };
+  const handlePreviousClick = () => {
+    const container = document.querySelector(".sectionContainer");
+    if (container) {
+      const newPosition = Math.max(scrollPosition - 450, 0);
+      setScrollPosition(newPosition);
+      container.scrollTo({
+        left: newPosition,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
-    <main className="px-10">
-      <Heading title="news and updates" />
+    <main className="md:px-10">
+      <h1 className="md:p-10 p-10 text-[#C2AB80] text-[32px] lg:text-[40px] font-semibold">
+        NEWS AND UPDATES
+      </h1>
       <main className="flex w-[89vw] m-auto overflow-scroll sectionContainer" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
         {newsData.map((item, index) => (
           <section className="newsCard min-w-[450px]" key={index}>
             <Image
               src={item.img}
               alt="image"
-            className="w-[427px] h-[415px
+              className="w-[427px] h-[415px
             ] m-auto object-contain"
             />
             <div className="content p-10">
@@ -89,7 +91,7 @@ const Section7 = () => {
               <p className="title font-bold text-xl text-[#154466] py-2">
                 Lorem ipsum dolor sit amet.
               </p>
-              <p className="text-[#154466] py-2">
+              <p className="text-[#154466] py-2 w-full pr-14">
                 Lorem ipsum dilla accumsan, risus sem sollicitudin lacus, ut
                 interdum tellus elit sed risus. Maecenas eget condimentum velit,
                 sit amet feugiat lectus
@@ -99,17 +101,17 @@ const Section7 = () => {
         ))}
       </main>
 
-      <div className="timelineSectionBtn flex p-5 px relative w-[200px] md:ml-auto">
+      <div className="timelineSectionBtn flex p-5 py-20 relative w-[200px] ml-auto">
         <div
-         onClick={handlePreviousClick}
-        className="bg-[#C2AB80] w-fit py-4 px-6  m-1 text-center cursor-pointer"
-        id="previousButton"
+          onClick={handlePreviousClick}
+          className="bg-[#C2AB80] w-fit py-4 px-6  m-1 text-center cursor-pointer"
+          id="previousButton"
         >
           <Image src={previous} alt="previous" />
         </div>
         <div
-         onClick={handleNextClick}
-        
+          onClick={handleNextClick}
+
           className="bg-[#C2AB80] w-fit py-4 px-6 m-1 text-center cursor-pointer"
           id="nextButton"
         >

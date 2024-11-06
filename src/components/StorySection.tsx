@@ -4,7 +4,7 @@ import Image from "next/image";
 const StorySection = () => {
   return (
     <>
-      <section className="w-full pr-10 pt-10">
+      <section className="w-full md:pr-10 pt-10">
         <h1 className="p-10 text-[#C2AB80] text-[32px] font-semibold lg:hidden">
           Foundation: <br /> Our Story
         </h1>
