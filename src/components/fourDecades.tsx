@@ -223,7 +223,7 @@ const fourDecades = () => {
         </section>
 
 
-        <section className="timelineSection ml-[100px]">
+        <section className="timelineSection ml-[150px]">
           <h3 className="timelineHeading text-blue text-[38px] font-semibold hidden md:block">
             {timelineData[index + 2].year}
           </h3>
