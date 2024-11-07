@@ -176,7 +176,7 @@ const fourDecades = () => {
       </div>
 
       {/* btn and line area */}
-      <section className="hidden md:flex ">
+      <section className="hidden md:flex items-center">
         <div
           id="previousButton"
           className="cursor-pointer bg-gray-400 w-fit p-3 text-center"
