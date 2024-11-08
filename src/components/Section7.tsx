@@ -71,17 +71,20 @@ const Section7 = () => {
   };
 
   return (
-    <main className="md:px-10">
+    <main className="px-10">
       <h1 className="md:p-10 p-10 text-[#C2AB80] text-[32px] lg:text-[40px] font-semibold">
         NEWS AND UPDATES
       </h1>
-      <main className="flex w-full m-auto overflow-scroll sectionContainer" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
+      <main
+        className="flex w-full m-auto overflow-scroll sectionContainer"
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+      >
         {newsData.map((item, index) => (
           <section className="newsCard min-w-[430px]" key={index}>
             <Image
               src={item.img}
               alt="image"
-              className="w-[427px] h-[415px
+              className="sm:w-[400px] w-[430px] h-[415px
             ] m-auto object-contain"
             />
             <div className="content p-10">
@@ -111,7 +114,6 @@ const Section7 = () => {
         </div>
         <div
           onClick={handleNextClick}
-
           className="bg-[#C2AB80] w-fit py-4 px-6 m-1 text-center cursor-pointer"
           id="nextButton"
         >
