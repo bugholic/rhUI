@@ -88,10 +88,44 @@ const fourDecades = () => {
 
   let index = timelineData.length - timelineData.length
 
+  // button config
+  const [timelinePosition, setTimelinePosition] = useState("0%");
+  const [arrowRightBg, setArrowRightBg] = useState("bg-golden");
+  const [arrowleftBg, setArrowleftBg] = useState("bg-disable");
+  // const nextPhone = useRef(null);
+  // const nextDesktop = useRef(null);
+
+  const timelineRight = () => {
+    console.log(timelinePosition);
+    if (timelinePosition === "-35%") {
+      setTimelinePosition("0%");
+      return;
+    }
+    if (timelinePosition === "0%") {
+      setTimelinePosition("-35%");
+    } else {
+      setTimelinePosition("-70%");
+      setArrowRightBg("bg-disable");
+      setArrowleftBg("bg-golden");
+    }
+  };
+
+
+  const timelineleft = () => {
+    if (timelinePosition === "-73%") {
+      setTimelinePosition("-32%");
+    } else {
+      setTimelinePosition("0%");
+      setArrowRightBg("bg-golden");
+      setArrowleftBg("bg-disable");
+    }
+  };
+
+
   return (
     <section className="p-5 md:px-10 pt-10" aria-readonly>
       <div className="md:w-4/5">
-      <Heading title="FOUR DECADES OF CONTINUOUS ADVANCEMENT SIGNIFY OUR UNWAVERING COMMITMENT TO PROGRESS, EVOLUTION, AND EXCELLENCE" />
+        <Heading title="FOUR DECADES OF CONTINUOUS ADVANCEMENT SIGNIFY OUR UNWAVERING COMMITMENT TO PROGRESS, EVOLUTION, AND EXCELLENCE" />
       </div>
       {/* Mobile View */}
       <div
@@ -139,8 +173,8 @@ const fourDecades = () => {
 
       {/* Desktop View */}
       <div
-        className="md:flex flex-row overflow-x-scroll timelineContainer hidden"
-        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        className={`md:flex flex-row overflow-x-hidden timelineContainer hidden translate-x-[${timelinePosition}]`}
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none", transform: `translateX(${timelinePosition})` }}
       >
         {/* upper section */}
         <section className="timelineSection ml-[500px]">
@@ -172,6 +206,19 @@ const fourDecades = () => {
           </h3>
         </section>
 
+        <section className="timelineSection ml-[130px]">
+          <h5 className="timelineInfo text-blue text-[20px] font-semibold tracking-tighter">
+            {/* INNOVATIVE VENTURES */}
+            {timelineData[index + 3].infoHeading}
+          </h5>
+          <p className="timelineInfo text-blue text-[16px] font-normal py-5 tracking-tighter">
+            {timelineData[index + 3].info}
+          </p>
+          <h3 className="timelineHeading text-blue text-[38px] font-semibold hidden md:block">
+            {timelineData[index + 3].year}
+          </h3>
+        </section>
+
         {/* upper section */}
       </div>
 
@@ -180,6 +227,7 @@ const fourDecades = () => {
         <div
           id="previousButton"
           className="cursor-pointer bg-gray-400 w-fit p-3 text-center"
+          onClick={timelineleft}
         >
           <Image src={previous} width={50} alt="previous" />
         </div>
@@ -196,16 +244,16 @@ const fourDecades = () => {
         <div
           // id="nextButton"
           className="cursor-pointer bg-[#C2AB80] w-fit p-2 text-center"
-          onClick={() => { index++ }}
+          onClick={timelineRight}
         >
           <Image src={next} width={50} alt="next" />
         </div>
       </section>
 
-      {/* btn and line area */}
+      {/* btn and line area end*/}
       <div
-        className="md:flex hidden flex-row overflow-x-scroll timelineContainer"
-        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        className={`md:flex flex-row overflow-x-hidden timelineContainer hidden translate-x-[${timelinePosition}]`}
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none", transform: `translateX(${timelinePosition})` }}
       >
 
         {/* bottom section */}
@@ -235,6 +283,18 @@ const fourDecades = () => {
           </p>
         </section>
 
+        <section className="timelineSection ml-[400px]">
+          <h3 className="timelineHeading text-blue text-[38px] font-semibold hidden md:block">
+            2019
+          </h3>
+          <h5 className="timelineInfo text-blue text-[20px] font-semibold tracking-tighter">
+            URBAN COMMERCIAL DEVELOPMENT
+          </h5>
+          <p className="timelineInfo text-blue text-[16px] font-normal py-5 tracking-tighter">
+            Launched Arriyadh Gate, a shopping complex for international brands
+          </p>
+        </section>
+        
         <section className="timelineSection ml-[400px]">
           <h3 className="timelineHeading text-blue text-[38px] font-semibold hidden md:block">
             2019
